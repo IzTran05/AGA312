@@ -310,7 +310,9 @@ MonoBehaviour:
   enemyPrefab: {fileID: 3468086091017211426, guid: 00c568a6e0d4b6249937eade7cdce883, type: 3}
   enemyCount: 0
   waveNumber: 1
-  powerUpPrefab: {fileID: 3934028910317967420, guid: 37132540b15788f4ca26f04221a1fbeb, type: 3}
+  powerUpPrefabs:
+  - {fileID: 3934028910317967420, guid: 37132540b15788f4ca26f04221a1fbeb, type: 3}
+  - {fileID: 3934028910317967420, guid: 70e77d1e85849a745ba6c645f24d4312, type: 3}
 --- !u!4 &1081239671
 Transform:
   m_ObjectHideFlags: 0
@@ -839,6 +841,8 @@ MonoBehaviour:
   speed: 4
   hasPowerUp: 0
   powerUpIndicator: {fileID: 839356320}
+  currentPowerUp: 0
+  rocketPrefab: {fileID: 3654044358607867248, guid: 105bce882f6a8ff478c5801773e679e7, type: 3}
 --- !u!1 &1547552694
 GameObject:
   m_ObjectHideFlags: 0
