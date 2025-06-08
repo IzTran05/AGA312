@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5125180075663936107}
   - component: {fileID: 5129466842759807485}
   - component: {fileID: -313872525098268486}
+  - component: {fileID: 8666990795121183715}
   m_Layer: 0
   m_Name: PowerUpRockets
   m_TagString: PowerUp
@@ -122,3 +123,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpType: 2
+--- !u!114 &8666990795121183715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934028910317967420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60672381551178c449043e46851a021e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
