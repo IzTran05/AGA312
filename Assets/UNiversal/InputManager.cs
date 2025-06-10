@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputManager : MonoBehaviour
+/*public class InputManager : MonoBehaviour
 {
     public InputActionAsset inputActions;
     private InputAction moveAction, jumpAction;
@@ -12,8 +12,8 @@ public class InputManager : MonoBehaviour
     public static Action OnJump = null;
 
 
-    private void Awake()
-    {
+    private void //Awake()
+    {/*
         moveAction = inputActions.FindActionMap("Player").FindAction("Move");
 
         inputActions.FindActionMap("Player").FindAction("Jump").performed += (context) =>
@@ -31,4 +31,4 @@ public class InputManager : MonoBehaviour
         OnMove?.Invoke(move);
     }
 
-}
+}*/

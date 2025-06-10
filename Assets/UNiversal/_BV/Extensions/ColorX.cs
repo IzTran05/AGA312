@@ -4,7 +4,7 @@ using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.UI;
-
+/*
 public static class ColorX
 {
     /// <summary>
@@ -15,6 +15,7 @@ public static class ColorX
     /// <param name="intensity">Intensity.</param>
     static public Color ApplyColorIntensity(Color baseColor, float intensity)
     {
+        
         float i = 1f - intensity;
         float r = Mathf.Clamp01(baseColor.r + i);
         float g = Mathf.Clamp01(baseColor.g + i);
@@ -136,4 +137,4 @@ public static class ColorX
     {
         return ColorUtility.ToHtmlStringRGBA(_color);
     }
-}
+}*/

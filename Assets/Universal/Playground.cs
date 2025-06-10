@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class Playground : GameBehaviour
+/*public class Playground : GameBehaviour
 {
 
     public GameObject player;
 
-    void Start()
+    void //Start()
     {
         ObjectX.ScaleObjectToZero(player);
         ExecuteAfterSeconds(1, () =>
@@ -17,15 +17,15 @@ public class Playground : GameBehaviour
 
     }
 
-    void Update()
+    void //Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space));
-        player.GetComponent<Renderer>().material.color = ColorX.GetRandomColour();
+      //  if (Input.GetKeyDown(KeyCode.Space));
+      //  player.GetComponent<Renderer>().material.color = ColorX.GetRandomColour();
     }
 
     private void SetupPlayer()
     {
-        player.GetComponent<Renderer>().material.color = ColorX.GetRandomColour();
+       // player.GetComponent<Renderer>().material.color = ColorX.GetRandomColour();
         ObjectX.ScaleObjectToValue(player);
     }
 
@@ -37,11 +37,11 @@ public class Playground : GameBehaviour
 
     private void OnJump()
     {
-        print("Ima Mario! WAAAAAHOOOOOO")
+      //  print("Ima Mario! WAAAAAHOOOOOO")
     }
 
 
-    private void OnEnable()
+    private void //OnEnable()
     {
         InputManager.OnMove += OnMove;
         InputManager.OnJump += OnJump;
@@ -53,4 +53,4 @@ public class Playground : GameBehaviour
         InputManager.OnJump -= OnJump;
     }
 
-}
+}*/
