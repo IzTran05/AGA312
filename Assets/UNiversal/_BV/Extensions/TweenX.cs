@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
-//using DG.Tweening;
+using DG.Tweening;
 
 public static class TweenX
 {
@@ -9,7 +9,7 @@ public static class TweenX
     /// Kills a tweener that may be active
     /// </summary>
     /// <param name="_tweener">The tweener to kill</param>
-   /* public static void KillTweener(Tweener _tweener)
+   public static void KillTweener(Tweener _tweener)
     {
         if (_tweener != null)
             _tweener.Kill();
@@ -61,5 +61,25 @@ public static class TweenX
     public static void TweenColor(TMPro.TMP_Text _text, Color _toColor, float _duration = 0.4f, Ease _ease = Ease.InOutSine)
     {
         _text.DOColor(_toColor, _duration).SetEase(_ease);
-    }*/
+    }
+
+    /// <summary>
+    /// Tween a numerical value
+    /// </summary>
+    /// <param name="_text"></param>
+    /// <param name="_startValue"></param>
+    /// <param name="_endValue"></param>
+    /// <param name="_duration"></param>
+    /// <param name="_ease"></param>
+    /// <param name="_format"></param>
+    public static void TweenNumbers(TMPro.TMP_Text _text, float _startValue, float _endValue, float _duration = 1f, Ease _ease = Ease.InOutSine, string _format = "F0")
+    {
+        DOTween.To(() => _startValue, x => _startValue = x, _endValue, _duration).SetEase(_ease).OnUpdate(() =>
+        {
+            _text.text = _startValue.ToString(_format);
+        });
+    }
+
+
+
 }
