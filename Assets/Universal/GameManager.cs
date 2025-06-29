@@ -5,48 +5,24 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
+    public int score = 0;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
-    public TextMeshProUGUI timer;
 
-    public int score;
-    public float timeRemaining = 60;
- 
-    void Start()
+    private void Awake()
     {
-        UpdateScore(0);
-        UpdateTime(timeRemaining);
-        gameOverText.gameObject.SetActive(false);
+        Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddScore(int value)
     {
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime;
-            UpdateTime(timeRemaining);
-        }
-        else
-        {
-            UpdateTime(0);
-            GameOver();
-        }
+        score += value;
+        UpdateScoreUI();
     }
 
-    public void UpdateScore(int scoreAdd)
+    void UpdateScoreUI()
     {
-        //score += scoreToAdd;
-        scoreText.text = "Score: " + score; 
-    }
-
-    public void UpdateTime(float timeLeft)
-    {
-        timer.text = "Time remaining: " + timeLeft;
-    }
-
-    public void GameOver()
-    {
-        gameOverText.gameObject.SetActive(true);
+        if (scoreText != null)
+            scoreText.text = "Score: " + score.ToString();
     }
 }

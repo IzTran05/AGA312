@@ -15,6 +15,7 @@ public class PlayerController2 : MonoBehaviour
         if (other.CompareTag("Leaf"))
         {
             Destroy(other.gameObject);
+            GameManager.Instance.AddScore(1);
         }
     }
 }
