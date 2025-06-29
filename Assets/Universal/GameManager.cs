@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
-        gameOverText.text = $"Game Over!\nFinal Score: {score}";
+        gameOverText.text = "Game Over! Final Score: {score}";
     }
 
     public void RestartGame()
