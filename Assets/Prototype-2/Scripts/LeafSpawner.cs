@@ -24,7 +24,14 @@ public class LeafSpawner : MonoBehaviour
         Vector3 spawnPos = new Vector3(xPos, transform.position.y, 0);
 
         GameObject selectedLeaf = GetWeightedRandomLeaf();
-        Instantiate(selectedLeaf, spawnPos, Quaternion.identity);
+        GameObject leafObj = Instantiate(selectedLeaf, spawnPos, Quaternion.identity);
+
+        //Adjusting falling speed based on difficulty
+        Leaf leafScript = leafObj.GetComponent<Leaf>();
+        if (leafScript != null)
+        {
+            leafScript.fallSpeed *= GameManager.Instance.difficultyMultiplier;
+        }
     }
 
     GameObject GetWeightedRandomLeaf()
