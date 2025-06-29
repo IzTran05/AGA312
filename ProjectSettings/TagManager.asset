@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - target
   - Respwan
+  - Ground
+  - Leaf
   layers:
   - Default
   - TransparentFX

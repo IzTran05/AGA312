@@ -78,16 +78,16 @@ public class TweenFun : MonoBehaviour
                 break;
 
         }
-        ChangeColour();
+       // ChangeColour();
         ScreenShake();
     }
 
-    private void ChangeColour() => player.GetComponent< Renderer > ().material.DOColor(ColorX.GetRandomColor(), moveTweenTime);
+   // private void ChangeColour() => player.GetComponent< Renderer > ().material.DOColor(ColorX.GetRandomColor(), moveTweenTime);
 
     private void ScreenShake() => Camera.main.DOShakePosition(moveTweenTime / 2, shakeStrength);
 
     private void IncreaseScore()
     {
-        TweenX.TweenNumbers(scoreText, score, score + scoreBonus, scoreTweenTime
+      //  TweenX.TweenNumbers(scoreText, score, score + scoreBonus, scoreTweenTime
     }
 }
