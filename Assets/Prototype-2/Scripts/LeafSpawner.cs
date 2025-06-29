@@ -1,8 +1,15 @@
 using UnityEngine;
+using System.Collections.Generic;
 
+    [System.Serializable]
+    public class LeafType
+    {
+        public GameObject prefab;
+        public float weight;
+    }
 public class LeafSpawner : MonoBehaviour
 {
-    public GameObject leafPrefab;
+    public List<LeafType> leafTypes = new List<LeafType>();
     public float spawnInterval = 1.5f;
     public float spawnRange = 5f;
     void Start()
@@ -15,6 +22,29 @@ public class LeafSpawner : MonoBehaviour
     {
         float xPos = Random.Range(-spawnRange, spawnRange);
         Vector3 spawnPos = new Vector3(xPos, transform.position.y, 0);
-        Instantiate(leafPrefab, spawnPos, Quaternion.identity);
+
+        GameObject selectedLeaf = GetWeightedRandomLeaf();
+        Instantiate(selectedLeaf, spawnPos, Quaternion.identity);
+    }
+
+    GameObject GetWeightedRandomLeaf()
+    {
+        float totalWeight = 0f;
+
+        foreach (var leaf in leafTypes)
+        totalWeight += leaf.weight;
+
+        float randomValue = Random.Range(0f, totalWeight);
+        float cumulative = 0f;
+
+        foreach (var leaf in leafTypes)
+        {
+            cumulative += leaf.weight;
+            if (randomValue <= cumulative)
+                return leaf.prefab;
+
+        }
+
+        return leafTypes[0].prefab;
     }
 }

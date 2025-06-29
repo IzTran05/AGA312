@@ -14,8 +14,14 @@ public class PlayerController2 : MonoBehaviour
     {
         if (other.CompareTag("Leaf"))
         {
+            Leaf leaf = other.GetComponent<Leaf>();
+            if (leaf != null)
+            {
+                GameManager.Instance.AddScore(leaf.pointValue);
+            }
+
             Destroy(other.gameObject);
-            GameManager.Instance.AddScore(1);
+
         }
     }
 }
