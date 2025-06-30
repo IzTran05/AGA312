@@ -10,6 +10,7 @@ TagManager:
   - Respwan
   - Ground
   - Leaf
+  - Obstacle
   layers:
   - Default
   - TransparentFX

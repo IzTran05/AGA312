@@ -14,34 +14,50 @@ public class GameManager : MonoBehaviour
 
     public int score = 0;
     public int misses = 0;
-    public int maxMisses = 5;  
+    public int maxMisses = 10;  
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public GameObject gameOverPanel;
 
+    private bool isGameOver = false;
+
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        gameOverPanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
 
     private void Start()
     {
-        Instance = this;
-        gameOverPanel.SetActive(false);
         InvokeRepeating(nameof(IncreaseDifficulty), difficultyInterval, difficultyInterval);
     }
 
     void IncreaseDifficulty()
     {
+        if (!isGameOver)
+        {
         difficultyMultiplier += difficultyIncreaseRate;
         Debug.Log("Difficulty increased to: " + difficultyMultiplier);
+        }
     }
 
-
-
-
-    private void Awake()
+    public void DeductScore(int value)
     {
-        Instance = this;
-        gameOverPanel.SetActive(false);
+        score -= value;
+        if (score < 0) score = 0;
+        UpdateScoreUI();
     }
+
 
     public void AddScore(int value)
     {
@@ -51,9 +67,14 @@ public class GameManager : MonoBehaviour
 
     public void LeafMissed()
     {
+        if (isGameOver) return;
+
         misses++;
+        Debug.Log("Leaf Missed!");
+
         if (misses >= maxMisses)
         {
+            Debug.Log("Gamer Over");
             GameOver();
         }
     }
@@ -66,9 +87,14 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
+        isGameOver = true;
         Time.timeScale = 0f;
+        
+        if (gameOverPanel != null)
         gameOverPanel.SetActive(true);
-        gameOverText.text = "Game Over! Final Score: {score}";
+
+        if (gameOverText)
+        gameOverText.text = $"Game Over! Final Score: {score}";
     }
 
     public void RestartGame()

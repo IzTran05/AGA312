@@ -23,5 +23,11 @@ public class PlayerController2 : MonoBehaviour
             Destroy(other.gameObject);
 
         }
+
+        else if (other.CompareTag("Obstacle"))
+        {
+            GameManager.Instance.DeductScore(2);
+            Destroy(other.gameObject);
+        }
     }
 }

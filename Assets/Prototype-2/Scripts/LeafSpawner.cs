@@ -12,6 +12,9 @@ public class LeafSpawner : MonoBehaviour
     public List<LeafType> leafTypes = new List<LeafType>();
     public float spawnInterval = 1.5f;
     public float spawnRange = 5f;
+
+    public GameObject obstaclePrefab;
+    public float obstacleChance = 0.2f;
     void Start()
     {
         InvokeRepeating("SpawnLeaf", 1f, spawnInterval);
@@ -32,6 +35,20 @@ public class LeafSpawner : MonoBehaviour
         {
             leafScript.fallSpeed *= GameManager.Instance.difficultyMultiplier;
         }
+
+        GameObject toSpawn;
+        if (Random.value < obstacleChance)
+        {
+            toSpawn = obstaclePrefab;
+        }
+        else
+        {
+            toSpawn = GetWeightedRandomLeaf();
+        }
+
+        GameObject obj = Instantiate(toSpawn, spawnPos, Quaternion.identity);
+
+        Debug.Log("Spawning leaf: " + toSpawn.name);
     }
 
     GameObject GetWeightedRandomLeaf()
