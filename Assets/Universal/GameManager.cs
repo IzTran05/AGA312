@@ -18,10 +18,12 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI timerText;
     public GameObject gameOverPanel;
+    
 
     private bool isGameOver = false;
-
+    private string minutes;
 
     private void Awake()
     {
@@ -35,6 +37,13 @@ public class GameManager : MonoBehaviour
 
         gameOverPanel.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void UpdateTimerDisplay(float time)
+    {
+        int miniutes = Mathf.FloorToInt(time / 60);
+        int seconds = Mathf.FloorToInt(time % 60);
+        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
     private void Start()
@@ -85,7 +94,7 @@ public class GameManager : MonoBehaviour
             scoreText.text = "Score: " + score.ToString();
     }
 
-    void GameOver()
+    public void GameOver()
     {
         isGameOver = true;
         Time.timeScale = 0f;
