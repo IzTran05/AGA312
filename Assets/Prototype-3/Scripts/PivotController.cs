@@ -8,6 +8,10 @@ public class PivotController : MonoBehaviour
     private Transform currentPivot;
     public float rotationSpeed = 50f;
 
+    public float maxSpeed = 150f;
+    public float accel = 100f;
+    private float currentSpeed;
+
     void Start()
     {
         currentPivot = pivotPointA;
