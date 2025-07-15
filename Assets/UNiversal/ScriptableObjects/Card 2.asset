@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34de5c5a6df28e449a14f87329b2d37, type: 3}
   m_Name: Card 2
   m_EditorClassIdentifier: 
-  suite: 0
-  value: 1
-  colour: {r: 0, g: 0, b: 0, a: 0}
-  description: 
-  icon: {fileID: 0}
+  cardID: 1
+  suite: 1
+  value: 6
+  colour: {r: 0.9056604, g: 0.40583837, b: 0.40583837, a: 0}
+  description: Dumbohwo
+  icon: {fileID: 21300000, guid: 5839792baffc9004b96050f4dcf8667d, type: 3}

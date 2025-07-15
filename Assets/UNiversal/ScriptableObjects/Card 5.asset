@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34de5c5a6df28e449a14f87329b2d37, type: 3}
   m_Name: Card 5
   m_EditorClassIdentifier: 
-  suite: 0
+  cardID: 4
+  suite: 1
   value: 1
-  colour: {r: 0, g: 0, b: 0, a: 0}
-  description: 
-  icon: {fileID: 0}
+  colour: {r: 0.8490566, g: 0.77503294, b: 0.3003738, a: 0}
+  description: Jokes on you!
+  icon: {fileID: 21300000, guid: 876a3cf325df18842b027aa0071b7500, type: 3}
