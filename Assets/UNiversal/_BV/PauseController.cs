@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public class PauseController : MonoBehaviour
-{
+//public class PauseController : MonoBehaviour
+/*{
 
     public GameObject pausePanel;
     private bool paused;
@@ -26,4 +26,4 @@ public class PauseController : MonoBehaviour
         Time.timeScale = paused ? 0 : 1;
     }
 }
-}
+}*/

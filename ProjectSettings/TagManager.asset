@@ -11,6 +11,8 @@ TagManager:
   - Ground
   - Leaf
   - Obstacle
+  - VIne
+  - Vine
   layers:
   - Default
   - TransparentFX
