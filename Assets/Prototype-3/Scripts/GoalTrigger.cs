@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class GoalTrigger : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    public GameObject gameOverUI;
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Level Complete!");
-            
+            if (gameOverUI != null)
+                gameOverUI.SetActive(true);
+
+            Time.timeScale = 0f; // Pauses the game
         }
     }
 }
