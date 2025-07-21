@@ -119,12 +119,11 @@ public class VineSwing : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            Debug.Log("Hit an obstacle!");
-
-            Vector3 knockbackDir = (transform.position - other.transform.position).normalized;
-            rb.AddForce(knockbackDir * 10f, ForceMode.Impulse);
-
-           
+            HealthSystem health = GetComponent<HealthSystem>();
+            if (health != null)
+            {
+                health.TakeDamage(1);
+            }
         }
     }
 
