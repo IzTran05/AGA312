@@ -17,7 +17,6 @@ public class VineSwing : MonoBehaviour
 
     private Transform currentVineAnchor;
     private Coroutine vineFlashCoroutine;
-    private Transform lastGrabbedVine;
     private Renderer lastVineRenderer;
 
     void Start()
@@ -80,14 +79,10 @@ public class VineSwing : MonoBehaviour
         if (sway != null)
             sway.player = transform;
 
-        // Optional: flash the vine
-        if (vineFlashCoroutine != null)
-            StopCoroutine(vineFlashCoroutine);
-
-        lastGrabbedVine = anchor;
+        // Flash vine material
         lastVineRenderer = anchor.GetComponentInChildren<Renderer>();
         if (lastVineRenderer != null && grabbedMaterial != null)
-            vineFlashCoroutine = StartCoroutine(FlashVineMaterial());
+            lastVineRenderer.material = grabbedMaterial;
     }
 
     void DetachFromVine()
@@ -97,10 +92,14 @@ public class VineSwing : MonoBehaviour
             VineSway sway = currentVineAnchor.GetComponent<VineSway>();
             if (sway != null)
                 sway.ResetVine();
+
+            if (lastVineRenderer != null && defaultMaterial != null)
+                lastVineRenderer.material = defaultMaterial;
         }
 
         Destroy(joint);
         currentVineAnchor = null;
+        lastVineRenderer = null;
 
         Vector3 forwardSwing = transform.forward + Vector3.up;
         rb.AddForce(forwardSwing * 5f, ForceMode.VelocityChange);
@@ -116,7 +115,20 @@ public class VineSwing : MonoBehaviour
         }
     }
 
-    IEnumerator FlashVineMaterial()
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            Debug.Log("Hit an obstacle!");
+
+            Vector3 knockbackDir = (transform.position - other.transform.position).normalized;
+            rb.AddForce(knockbackDir * 10f, ForceMode.Impulse);
+
+           
+        }
+    }
+
+    /*IEnumerator FlashVineMaterial()
     {
         if (lastVineRenderer == null || grabbedMaterial == null || defaultMaterial == null)
             yield break;
@@ -124,5 +136,5 @@ public class VineSwing : MonoBehaviour
         lastVineRenderer.material = grabbedMaterial;
         yield return new WaitForSeconds(0.5f);
         lastVineRenderer.material = defaultMaterial;
-    }
+    }*/
 }
