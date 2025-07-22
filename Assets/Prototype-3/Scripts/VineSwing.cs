@@ -167,7 +167,7 @@ public class VineSwing : MonoBehaviour
 
     void SlowDownMomentum()
     {
-        rb.velocity *= slowDownFactor;
+        rb.linearVelocity *= slowDownFactor;
     }
 
     void HandleGroundMovement()
@@ -180,8 +180,8 @@ public class VineSwing : MonoBehaviour
         if (inputDir.magnitude > 0.1f)
         {
             Vector3 move = transform.TransformDirection(inputDir) * moveSpeed;
-            Vector3 targetVelocity = new Vector3(move.x, rb.velocity.y, move.z);
-            rb.velocity = targetVelocity;
+            Vector3 targetVelocity = new Vector3(move.x, rb.linearVelocity.y, move.z);
+            rb.linearVelocity = targetVelocity;
         }
     }
 
