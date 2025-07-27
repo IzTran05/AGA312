@@ -14,7 +14,7 @@ public class AnswerOption : MonoBehaviour
         if (isCorrect)
         {
             Debug.Log("Correct!");
-            gameObject.SetActive(false);
+            transform.root.gameObject.SetActive(false);
         }
         else
         {
