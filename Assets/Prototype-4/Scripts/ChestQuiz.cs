@@ -6,6 +6,7 @@ public class ChestQuiz : MonoBehaviour
     public GameObject chestUI;
     public TextMeshPro questionText;
     public GameObject[] answerButtons;
+    public Animator anim;
 
     private int correctAnswer;
 
@@ -19,7 +20,8 @@ public class ChestQuiz : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GenerateQuestion();
-            chestUI.SetActive(true);
+            //chestUI.SetActive(true);
+            anim.SetTrigger("Show");
         }
     }
 
@@ -42,4 +44,6 @@ public class ChestQuiz : MonoBehaviour
             answerButtons[i].SetActive(true);
         }
     }
+
+   
 }

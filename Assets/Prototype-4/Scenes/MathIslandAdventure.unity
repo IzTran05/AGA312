@@ -249,9 +249,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1618808119611754573, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782128635920980016, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4933841609182347017, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
       propertyPath: m_Name
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5301285124124649147, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5707000127821620659, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -293,10 +305,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7517260617043742687, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6788229571436081495, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4285820117268850182, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3813261073289997038, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 2377262915334981096, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: d3ed6c1650be3e4469219962eba6ed8b, type: 3}
 --- !u!1 &100783499
 GameObject:
@@ -2559,6 +2587,7 @@ GameObject:
   - component: {fileID: 914149871}
   - component: {fileID: 914149870}
   - component: {fileID: 914149869}
+  - component: {fileID: 914149874}
   m_Layer: 0
   m_Name: MathEnemy
   m_TagString: Untagged
@@ -2674,6 +2703,28 @@ Transform:
   - {fileID: 2123486567}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &914149874
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914149868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b9dd02869deeac48ac3d547b87e185f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &946856274
 GameObject:
   m_ObjectHideFlags: 0
@@ -5066,7 +5117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2123486567
 Transform:
   m_ObjectHideFlags: 0
