@@ -36,4 +36,11 @@ public class PauseManager : MonoBehaviour
         Time.timeScale = 1f; 
         SceneManager.LoadScene("MainMenu4");
     }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+    }
 }
