@@ -10,10 +10,12 @@ public class GameManager4 : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI feedbackText;
     public TextMeshProUGUI timerText;
+    public BV.Range Fog;
+    public float startTime = 120;
 
     public GameObject endGameScreen;
 
-    private float timeRemaining = 120f;
+    private float timeRemaining;
     private bool gameActive = true;
 
     void Awake()
@@ -22,6 +24,10 @@ public class GameManager4 : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        RenderSettings.fogEndDistance = Fog.max;
+
+        timeRemaining = startTime;
     }
 
     void Update()
@@ -93,13 +99,19 @@ public class GameManager4 : MonoBehaviour
         }
     }
 
+        float fogIntensity =60;
     void UpdateFog()
     {
-        float totalGameTime = 120f; 
-        float progress = Mathf.Clamp01(1 - (timeRemaining / totalGameTime));
 
-        float fogDensity = Mathf.Lerp(0.001f, 0.05f, progress);
-        RenderSettings.fogDensity = fogDensity;
+        RenderSettings.fogEndDistance = MathX.Map(timeRemaining, 0, startTime, Fog.min, Fog.max);
+
+       //float totalGameTime = timeRemaining;
+       // fogIntensity = MathX.Map(fogIntensity,  0, 120, Fog.min, Fog.max);
+       // Debug.Log("FogIntensity " + fogIntensity);
+       //float progress = Mathf.Clamp01(1 - (timeRemaining / totalGameTime));
+       //float fogDensity = Mathf.Lerp(Fog.min, Fog.max, progress);
+       // float fogDensity = Mathf.Lerp(0.001f, 0.05f, progress);
+       //RenderSettings.fogDensity = fogDensity;
     }
 
     void ClearFeedback()
