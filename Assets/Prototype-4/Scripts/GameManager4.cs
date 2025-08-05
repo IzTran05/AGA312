@@ -13,7 +13,7 @@ public class GameManager4 : MonoBehaviour
 
     public GameObject endGameScreen;
 
-    private float timeRemaining = 60f;
+    private float timeRemaining = 120f;
     private bool gameActive = true;
 
     void Awake()
@@ -46,6 +46,13 @@ public class GameManager4 : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
 
         if (timeRemaining <= 0f)
+        {
+            EndGame();
+        }
+
+        UpdateFog();
+
+        if(timeRemaining <= 0f)
         {
             EndGame();
         }
@@ -84,6 +91,15 @@ public class GameManager4 : MonoBehaviour
             CancelInvoke(nameof(ClearFeedback));
             Invoke(nameof(ClearFeedback), 1f);
         }
+    }
+
+    void UpdateFog()
+    {
+        float totalGameTime = 120f; 
+        float progress = Mathf.Clamp01(1 - (timeRemaining / totalGameTime));
+
+        float fogDensity = Mathf.Lerp(0.001f, 0.05f, progress);
+        RenderSettings.fogDensity = fogDensity;
     }
 
     void ClearFeedback()
