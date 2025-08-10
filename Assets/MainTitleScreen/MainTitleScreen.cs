@@ -29,4 +29,8 @@ public class MainTitleScreen : MonoBehaviour
         SceneManager.LoadScene("MainMenu5");
     }
     
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
