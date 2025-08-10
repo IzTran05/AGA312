@@ -13,4 +13,9 @@ public class MainMenu4 : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void ReturnToMainTitle()
+    {
+        SceneManager.LoadScene("MainTitleScreen");
+    }
 }

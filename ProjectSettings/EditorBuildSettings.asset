@@ -8,22 +8,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UNiversal/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Prototype-1/Scenes/Prototype 1.unity
     guid: a4b96ad7a65484fd4a83cb97540eee50
-  - enabled: 0
-    path: Assets/Prototype-2/Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/Prototype-2/Scenes/MainMenu1.unity
     guid: 4011fb1d9f9ae03429acd05ee5084033
-  - enabled: 0
+  - enabled: 1
     path: Assets/Prototype-2/Scenes/AutumnTrove.unity
     guid: b53c1bcd5880b724f829b74541d58d63
-  - enabled: 0
+  - enabled: 1
     path: Assets/Prototype-1/Scenes/Title Screen.unity
     guid: a45cb101a79456c4faf41e089c16d047
-  - enabled: 0
-    path: Assets/Prototype-3/Scenes/MainMenu.unity
+  - enabled: 1
+    path: Assets/Prototype-3/Scenes/MainMenu2.unity
     guid: 1adaef999b36d46479e0879e2feb1ec6
-  - enabled: 0
+  - enabled: 1
     path: Assets/Prototype-3/Scenes/JungleJourney.unity
     guid: 2f0242ff9372374428b08d79395bb9fe
   - enabled: 1
@@ -32,6 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Prototype-4/Scenes/MathIslandAdventure.unity
     guid: 828dac722e27fff4e95eeacb0531ff54
+  - enabled: 1
+    path: Assets/MainTitleScreen/MainTitleScreen.unity
+    guid: 0316bee6e2382634686842c6f7544cb5
+  - enabled: 1
+    path: Assets/Prototype-1/Scenes/MainMenu0.unity
+    guid: fd4612b1625bc5b48a331298a672e796
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

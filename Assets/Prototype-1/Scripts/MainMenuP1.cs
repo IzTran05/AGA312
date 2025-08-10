@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class MainMenuP1 : MonoBehaviour
 {
-   public void PlayGame()
+    public void PlayGame()
     {
-        SceneManager.LoadScene("AutumnTrove");
+        SceneManager.LoadScene("Prototype 1");
     }
 
     public void ReturnToMainTitle()
@@ -16,10 +16,5 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-    public void BackToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu1");
     }
 }

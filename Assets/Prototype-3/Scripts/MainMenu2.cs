@@ -7,4 +7,9 @@ public class MainMenu2 : MonoBehaviour
         SceneManager.LoadScene("JungleJourney");
     }
 
+    public void ReturnToMainTitle()
+    {
+        SceneManager.LoadScene("MainTitleScreen");
+    }
+
 }
