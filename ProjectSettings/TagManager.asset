@@ -15,6 +15,7 @@ TagManager:
   - Vine
   - Goal
   - Chest
+  - Door
   layers:
   - Default
   - TransparentFX
